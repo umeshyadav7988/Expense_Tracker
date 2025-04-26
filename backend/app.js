@@ -7,17 +7,18 @@ import helmet from "helmet";
 import morgan from "morgan";
 import transactionRoutes from "./Routers/Transactions.js";
 import userRoutes from "./Routers/userRouter.js";
-import path from "path";
 
 dotenv.config({ path: "./config/config.env" });
+
 const app = express();
+const port = process.env.PORT || 5000;
 
-const port = 5000;
-
+// Connect Database
 connectDB();
 
+// Only allow localhost frontend
 const allowedOrigins = [
-  "https://expense-tracker-hh9tkivmo-umeshs-projects-defe119c.vercel.app"
+  "http://localhost:3000"
 ];
 
 // Middleware
@@ -35,14 +36,16 @@ app.use(morgan("dev"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-// Router
+// Routers
 app.use("/api/v1", transactionRoutes);
 app.use("/api/auth", userRoutes);
 
+// Basic route
 app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 
+// Start server
 app.listen(port, () => {
   console.log(`Server is listening on http://localhost:${port}`);
 });
