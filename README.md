@@ -35,11 +35,6 @@ It allows users to manage their expenses, visualize spending patterns, and gener
 - **Database**: MongoDB (with Mongoose ORM)
 - **Authentication**: JWT (JSON Web Tokens)
 
-### 6. Deployment
-- Frontend deployed on **AWS**.
-- Backend deployed on **Render**.
-- CI/CD pipelines for automated build and deployment.
-
 ## Architecture Overview
 - **Frontend**: React.js SPA with reusable components and API integrations.
 - **Backend**: RESTful API built using Express.js.
