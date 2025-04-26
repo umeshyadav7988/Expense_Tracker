@@ -43,7 +43,7 @@ It allows users to manage their expenses, visualize spending patterns, and gener
 ## Installation (Local Setup)
 ```bash
 # Clone the repository
-git clone <your-repo-link>
+git clone https://github.com/umeshyadav7988/Expense_Tracker.git
 
 # Navigate into frontend
 cd frontend
