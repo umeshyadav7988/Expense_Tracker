@@ -1,10 +1,17 @@
 import mongoose from "mongoose";
 
-export const connectDB = async (req, res) => {
-    const db = process.env.MONGO_URL;
+export const connectDB = async () => {
+  const db = "mongodb://localhost:27017/Expense_Tracker"; // Directly hardcoded
 
-    const {connection} = await mongoose.connect(db, { useNewUrlParser: true });
+  try {
+    const { connection } = await mongoose.connect(db, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
 
     console.log(`MongoDB Connected to ${connection.host}`);
-
-}
+  } catch (error) {
+    console.error("MongoDB connection error:", error.message);
+    process.exit(1); // Exit process if cannot connect
+  }
+};

@@ -12,14 +12,12 @@ import path from "path";
 dotenv.config({ path: "./config/config.env" });
 const app = express();
 
-const port = process.env.PORT;
+const port = 5000;
 
 connectDB();
 
 const allowedOrigins = [
-  "https://main.d1sj7cd70hlter.amplifyapp.com",
-  "https://expense-tracker-app-three-beryl.vercel.app",
-  // add more origins as needed
+  "https://expense-tracker-hh9tkivmo-umeshs-projects-defe119c.vercel.app"
 ];
 
 // Middleware
